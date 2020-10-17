@@ -1,0 +1,70 @@
+:root {
+    --brand-text: 'Permanent Marker', cursive;
+    --brand-color: #009DCA;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+header, footer {
+    font-family: var(--brand-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    width: 100%;
+    background-color: var(--brand-color);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: fantasy;
+}
+
+main {
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+main > section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    font-family: var(--brand-text);
+    color: black;
+    width: 300px;
+    height: 150px;
+    border-radius: 12px;
+    margin: 10px;
+}
+
+.card:hover {
+    box-shadow: 1px 1px 17px 1px slategrey;
+}
+
+.outline {
+    border: 1px solid var(--brand-color);
+}
+
+.flex-ctr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    text-shadow: 2px 2px 5px white;
+}
+
+footer {
+    font-family: sans-serif;
+}
+
