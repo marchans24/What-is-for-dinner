@@ -35,17 +35,17 @@ function getData(detailURL) {
     const url = detailURL ? detailURL : BASE_URL;
 
     $.ajax(url)
-    .then(function(data) {
-        if(detailURL) {
-            beerDetail = data;
-            render(true);
-        } else {
-            beerData = data;
-            render();
-        }
-    }, function(error) {
-        console.log('Error: ', error);
-    });
+        .then(function (data) {
+            if (detailURL) {
+                beerDetail = data;
+                render(true);
+            } else {
+                beerData = data;
+                render();
+            }
+        }, function (error) {
+            console.log('Error: ', error);
+        });
 }
 
 
@@ -55,7 +55,7 @@ function handleClick() {
 }
 
 function generateUI() {
-    return beerData.map(function(beer) {
+    return beerData.map(function (beer) {
         return `
             <article data-url="https://api.punkapi.com/v2/beers/${beer.id}" class="card flex-ctr outline">
                 <h3>${beer.tagline}</h3>
@@ -64,10 +64,15 @@ function generateUI() {
 }
 
 function render(isDetail) {
-    if(isDetail) {
-        $name.text(`Name: ${beerDetail.name}`);
+    if (isDetail) {
+        $image.attr({
+            src: beerDetail[0].image_url,
+            alt: beerData[0].name
+        });
+        $name.text(`Name: ${beerDetail[0].name}`);
+        $pairing.text(`Food Pairing: ${beerDetail[0].food_pairing}`)
         $modal.modal();
     } else {
         $cardsEl.html(generateUI());
-    }  
+    }
 }
