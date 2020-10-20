@@ -1,12 +1,18 @@
 // Constants
+
 const BASE_URL = 'https://api.punkapi.com/v2/beers';
 
 // Variables
-let beerData;
+let beerData, beerDetail;
 
 
 // Cached Element References
+
 const $cardsEl = $('#cards');
+const $modal = $('#modal');
+const $image = $('#image');
+const $name = $('#name');
+const $pairing = $('#pairing');
 
 
 // Event Listeners
@@ -16,17 +22,27 @@ $cardsEl.on('click', 'article', handleClick);
 
 // Functions
 
+
+
 init();
 
 function init() {
     getData();
 }
 
-function getData() {
-    $.ajax(BASE_URL)
+function getData(detailURL) {
+
+    const url = detailURL ? detailURL : BASE_URL;
+
+    $.ajax(url)
     .then(function(data) {
-        beerData = data;
-        render();
+        if(detailURL) {
+            beerDetail = data;
+            render(true);
+        } else {
+            beerData = data;
+            render();
+        }
     }, function(error) {
         console.log('Error: ', error);
     });
@@ -34,23 +50,24 @@ function getData() {
 
 
 function handleClick() {
-    console.log(this);
+    const url = this.dataset.url;
+    getData(url);
 }
 
 function generateUI() {
     return beerData.map(function(beer) {
         return `
-            <article class="card flex-ctr outline">
-                <h3>${beer.name}</h3>
+            <article data-url="https://api.punkapi.com/v2/beers/${beer.id}" class="card flex-ctr outline">
+                <h3>${beer.tagline}</h3>
             </article>`;
     });
 }
 
-function render() {
-    $cardsEl.html(generateUI())
+function render(isDetail) {
+    if(isDetail) {
+        $name.text(`Name: ${beerDetail.name}`);
+        $modal.modal();
+    } else {
+        $cardsEl.html(generateUI());
+    }  
 }
-
-// console.log('Beer Data: ', data);
-
-
-
