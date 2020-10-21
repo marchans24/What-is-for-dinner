@@ -20,22 +20,32 @@
 </head>
 
 <body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0"
+        nonce="c9JQR9e3"></script>
     <header>
         <h1>What's For Dinner?</h1>
     </header>
     <main class="flex-ctr">
         <section id="cards" class="flex-ctr">
         </section>
+        <div class="fb-page" data-href="https://www.facebook.com/brewdogofficial/" data-tabs="" data-width=""
+            data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false"
+            data-show-facepile="true">
+            <blockquote cite="https://www.facebook.com/brewdogofficial/" class="fb-xfbml-parse-ignore"><a
+                    href="https://www.facebook.com/brewdogofficial/">BrewDog</a></blockquote>
+        </div>
     </main>
     <footer>
         <p>Copyright &copy; 2020 NOT affiliated with BrewDog</p>
     </footer>
 
     <div id="modal" class="modal">
-        <img id="image" src="" alt="">
+        <img id="image" src="" alt="" style="max-width:100px"></img>
         <h4 id="name"></h4>
         <h4 id="pairing"></h4>
     </div>
+
 </body>
 
 </html>
