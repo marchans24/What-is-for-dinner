@@ -69,8 +69,8 @@ function render(isDetail) {
             src: beerDetail[0].image_url,
             alt: beerData[0].name
         });
-        $name.text(`Name: ${beerDetail[0].name}`);
-        $pairing.text(`Food Pairing: ${beerDetail[0].food_pairing}`)
+        $name.text(`BEER CHOICE: ${beerDetail[0].name}`);
+        $pairing.text(`FOR DINNER: ${beerDetail[0].food_pairing}`)
         $modal.modal();
     } else {
         $cardsEl.html(generateUI());
