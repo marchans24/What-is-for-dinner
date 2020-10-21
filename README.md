@@ -16,7 +16,7 @@ Screenshots:
 
 
 
-Technologies Used: HTML, CSS, JavaScript, jQuery
+Technologies Used: HTML, CSS, JavaScript, jQuery, AJAX
 
 Getting Started: Select what sounds like the best beer for your tastebuds!
 https://marchans24.github.io/What-is-for-dinner/
