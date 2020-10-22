@@ -1,11 +1,12 @@
-<h1>Application Title:
-What's For Dinner?</h1>
+<h1>
+Application Title:
+What's For Dinner?
+</h1>
 
 
 Wireframe:
 (https://imgur.com/heOyYfp)
 
-![Wireframe](https://imgur.com/heOyYfp)
 
 Based on the user's choice of what sounds best in an ice cold beer for the evening, this app will pair the perfect beer and food for your enjoyment. 
 
